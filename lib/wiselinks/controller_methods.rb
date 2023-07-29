@@ -20,42 +20,42 @@ module Wiselinks
     def wiselinks_title(value)
       if self.request.wiselinks? && value.present?
         Wiselinks.log("title: #{value}")
-        self.response.headers['X-Wiselinks-Title'] = URI.encode(value)
+        self.response.headers['X-Wiselinks-Title'] = CGI.escape(value)
       end
     end
 
     def wiselinks_description(value)
       if self.request.wiselinks? && value.present?
         Wiselinks.log("description: #{value}")
-        self.response.headers['X-Wiselinks-Description'] = URI.encode(value)
+        self.response.headers['X-Wiselinks-Description'] = CGI.escape(value)
       end
     end
 
     def wiselinks_canonical(value)
       if self.request.wiselinks? && value.present?
         Wiselinks.log("canonical: #{value}")
-        self.response.headers['X-Wiselinks-Canonical'] = URI.encode(value)
+        self.response.headers['X-Wiselinks-Canonical'] = CGI.escape(value)
       end
     end
 
     def wiselinks_robots(value)
       if self.request.wiselinks? && value.present?
         Wiselinks.log("robots: #{value}")
-        self.response.headers['X-Wiselinks-Robots'] = URI.encode(value)
+        self.response.headers['X-Wiselinks-Robots'] = CGI.escape(value)
       end
     end
 
     def wiselinks_link_rel_prev(value)
       if self.request.wiselinks? && value.present?
         Wiselinks.log("link_rel_prev: #{value}")
-        self.response.headers['X-Wiselinks-LinkRelPrev'] = URI.encode(value)
+        self.response.headers['X-Wiselinks-LinkRelPrev'] = CGI.escape(value)
       end
     end
 
     def wiselinks_link_rel_next(value)
       if self.request.wiselinks? && value.present?
         Wiselinks.log("link_rel_next: #{value}")
-        self.response.headers['X-Wiselinks-LinkRelNext'] = URI.encode(value)
+        self.response.headers['X-Wiselinks-LinkRelNext'] = CGI.escape(value)
       end
     end
 
